@@ -6,8 +6,8 @@
 //Variable from the user	
 	$Fname = $_POST["FnamePost"];//名
 	$Lname = $_POST["LnamePost"];//	姓	
-	$SSnname = $_POST["SSnnamePost"]; //"Lucas Test AC";
-	$password = $_POST["passwordPost"];//"123456";
+	$SSnname = $_POST["SSnnamePost"]; //員工編號;
+	$password = $_POST["passwordPost"];//密碼;
 	
 	//	$sql ="SELECT Fname ,Lname,SSn,password,Supe_ssn,Teamno FROM employee";
 	
@@ -17,7 +17,27 @@
 	$result =mysqli_query($link,"SET NAMES utf8");
 	$result = mysqli_query($link ,$sql);
 	
-	if(!result) echo "there was an error";
-		else echo "register sucess!";
+	//if (isset($Fname)){
+	//	echo "1.用ISSET判斷Fname欄位存在<br>";
+    //}
+	//else {
+	//	echo "1.用ISSET判斷Fname欄位不存在<br>";
+    //}
+	//if ($Fname == "") {
+	//	echo "2.用== ''判斷Fname是空的<br>";
+	//}
+	//else {
+	//	echo "2.用== ''判斷Fname不是空的<br>" ;
+    //}
+	
+	if ($Lname!=""&&$Fname!=""&&$SSnname!=""&&$password!="") {
+		echo " '".$SSnname."' 註冊成功";
+		
+		}
+	else {
+		echo "註冊失敗";
+	}
+	
+	
 
 ?>
