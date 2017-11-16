@@ -19,6 +19,26 @@
 	$Blue=$_POST["BluePost"];
 	//	$sql ="SELECT Fname ,Lname,SSn,password,Supe_ssn,Teamno FROM employee";
 	
+	if(!get_magic_quotes_gpc()){
+		$Cnum = addslashes($Cnum);
+		$Cstory = addslashes($Cstory);
+		$Pnum=addslashes($Pnum);
+		$CSsn=addslashes($CSsn);
+		$Estimate=addslashes($Estimate);
+		
+		$xLocation =addslashes($xLocation);
+		$yLocation =addslashes($yLocation);
+		
+		$Alpha =addslashes($Alpha);
+		$Red =addslashes($Red);
+		$Green=addslashes($Green);
+		$Blue=addslashes($Blue);
+		
+	}
+	
+	
+	
+	
 	//$result =mysqli_query($conn,"SET NAMES utf8");
 	$sql = "INSERT INTO card (Cnum ,Cstory,Pnum,CSsn,Estimate,xLocation,yLocation,Alpha,Red,Green,Blue)
 			VALUES ('".$Cnum."','".$Cstory."','".$Pnum."','".$CSsn."','".$Estimate."','".$xLocation."','".$yLocation."','".$Alpha."','".$Red."','".$Green."','".$Blue."')";
@@ -33,4 +53,5 @@
 		echo "卡片產生失敗";
 	}	
 
+	
 ?>

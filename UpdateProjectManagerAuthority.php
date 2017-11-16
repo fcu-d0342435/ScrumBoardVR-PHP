@@ -8,6 +8,9 @@
 	
 	$SSnname = $_POST["SSnnamePost"]; //員工編號;
 	
+	if(!get_magic_quotes_gpc()){
+		$SSnname=addslashes($SSnname);		
+	}
 	
 	$sql = "UPDATE employee SET authority = 2 WHERE employee.SSn = '".$SSnname."';";
 	$result =mysqli_query($link,"SET NAMES utf8");
@@ -20,4 +23,6 @@
 	else {
 		echo "提升權限失敗";
 	}	
+	
+	
 ?>

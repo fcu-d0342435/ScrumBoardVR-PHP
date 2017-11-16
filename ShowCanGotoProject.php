@@ -8,6 +8,10 @@
 	
 	$sql ="SELECT Pnumber,PSsn,PCharacter FROM projectemployee WHERE PSsn='".$SSnname."' ";
 	
+	if(!get_magic_quotes_gpc()){
+		$SSnname=addslashes($SSnname);		
+	}
+	
 	$result =mysqli_query($link,"SET NAMES utf8");
 	$result = mysqli_query($link ,$sql);
 	$i=0;
@@ -25,5 +29,6 @@
 	else if(mysqli_num_rows($result)==0){	
 	    echo "NULL";
 	}
+	
 	
 ?>
