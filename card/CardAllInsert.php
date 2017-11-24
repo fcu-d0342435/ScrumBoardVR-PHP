@@ -5,9 +5,16 @@
 
 //Variable from the user	
 	$Cnum = $_POST["CnumPost"];
-	$Cstory = $_POST["CstoryPost"];
+	
+	$Ctitle = $_POST["CtitlePost"];
+	$Ctext = $_POST["CtextPost"];
+	
+	$Etime= $_POST["EtimePost"];
+	
 	$Pnum=$_POST["PnumPost"];
 	$CSsn=$_POST["CSsnPost"];
+	$ASsn=$_POST["ASsnPost"];
+	
 	$Estimate=$_POST["EstimatePost"];
 	
 	$xLocation = $_POST["xLocationPost"];
@@ -19,29 +26,9 @@
 	$Blue=$_POST["BluePost"];
 	//	$sql ="SELECT Fname ,Lname,SSn,password,Supe_ssn,Teamno FROM employee";
 	
-	if(!get_magic_quotes_gpc()){
-		$Cnum = addslashes($Cnum);
-		$Cstory = addslashes($Cstory);
-		$Pnum=addslashes($Pnum);
-		$CSsn=addslashes($CSsn);
-		$Estimate=addslashes($Estimate);
-		
-		$xLocation =addslashes($xLocation);
-		$yLocation =addslashes($yLocation);
-		
-		$Alpha =addslashes($Alpha);
-		$Red =addslashes($Red);
-		$Green=addslashes($Green);
-		$Blue=addslashes($Blue);
-		
-	}
-	
-	
-	
-	
 	//$result =mysqli_query($conn,"SET NAMES utf8");
-	$sql = "INSERT INTO card (Cnum ,Cstory,Pnum,CSsn,Estimate,xLocation,yLocation,Alpha,Red,Green,Blue)
-			VALUES ('".$Cnum."','".$Cstory."','".$Pnum."','".$CSsn."','".$Estimate."','".$xLocation."','".$yLocation."','".$Alpha."','".$Red."','".$Green."','".$Blue."')";
+	$sql = "INSERT INTO card (Cnum ,Ctitle,Ctext,Pnum,CSsn,ASsn,Estimate,Etime,xLocation,yLocation,Alpha,Red,Green,Blue)
+			VALUES ('".$Cnum."','".$Ctitle."','".$Ctext."','".$Pnum."','".$CSsn."','".$ASsn."','".$Estimate."','".$Etime."','".$xLocation."','".$yLocation."','".$Alpha."','".$Red."','".$Green."','".$Blue."')";
 	$result =mysqli_query($link,"SET NAMES utf8");
 	$result = mysqli_query($link ,$sql);
 	//&&$Cstory!=""
@@ -53,5 +40,4 @@
 		echo "卡片產生失敗";
 	}	
 
-	
 ?>

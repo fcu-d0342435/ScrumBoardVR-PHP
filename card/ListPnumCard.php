@@ -5,11 +5,7 @@
 	
 	$Pnum=$_POST["PnumPost"];//員工編號;
 	
-	if(!get_magic_quotes_gpc()){
-		$Pnum=addslashes($Pnum);		
-	}
-	
-	$sql ="SELECT Cnum,	Cstory,xLocation,yLocation,Pnum,CSsn,Estimate,Alpha,Red,Green,Blue FROM card WHERE Pnum='".$Pnum."' ";
+	$sql ="SELECT Cnum,	Ctitle,Ctext,xLocation,yLocation,Pnum,CSsn,ASsn,Estimate,Etime,Alpha,Red,Green,Blue FROM card WHERE Pnum='".$Pnum."' ";
 	$result =mysqli_query($link,"SET NAMES utf8");
 	$result =mysqli_query($link,$sql);
 	$i=0;

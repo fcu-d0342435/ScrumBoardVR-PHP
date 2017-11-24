@@ -3,7 +3,7 @@
 	
     $link=Connection();
 	
-	$sql ="SELECT Cnum,	Cstory,xLocation,yLocation,Pnum,CSsn,Estimate,Alpha,Red,Green,Blue FROM card";
+	$sql ="SELECT Cnum,	Ctitle,Ctext,xLocation,yLocation,Pnum,CSsn,ASsn,Estimate,Etime,Alpha,Red,Green,Blue FROM card";
 	$result =mysqli_query($link,"SET NAMES utf8");
 	$result =mysqli_query($link,$sql);
 	$i=0;
@@ -20,6 +20,4 @@
 	else if(mysqli_num_rows($result)==0){	
 	    echo "NULL";
 	}
-	
-	
 ?>
