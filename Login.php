@@ -4,13 +4,9 @@
 	
     $link=Connection();
 	
-	$SSnname = $_POST['SSnnamePost']; //"Lucas Test AC";
-	$password = $_POST['passwordPost'];//"123456";
+	$SSnname = $_POST["SSnnamePost"]; //"Lucas Test AC";
+	$password = $_POST["passwordPost"];//"123456";
 	
-	if(!get_magic_quotes_gpc()){
-		$SSnname =addslashes($SSnname);
-		$password=addslashes($password);
-	}
 	
 	$sql = "SELECT SSn FROM employee WHERE password ='".$password."' ";
 	$result =mysqli_query($link,"SET NAMES utf8");
@@ -29,5 +25,4 @@
 	else {
 		echo "login faild";//找不到使用者
 	}
-	
 ?>

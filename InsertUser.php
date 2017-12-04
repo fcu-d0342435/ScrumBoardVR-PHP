@@ -9,14 +9,6 @@
 	$SSnname = $_POST["SSnnamePost"]; //員工編號;
 	$password = $_POST["passwordPost"];//密碼;
 	
-	if(!get_magic_quotes_gpc()){
-		$Fname =addslashes($Fname);
-		$Lname=addslashes($Lname);
-		$SSnname=addslashes($SSnname);
-		$password=addslashes($password);
-	}
-	
-	
 	//	$sql ="SELECT Fname ,Lname,SSn,password,Supe_ssn,Teamno FROM employee";
 	
 	//$result =mysqli_query($conn,"SET NAMES utf8");

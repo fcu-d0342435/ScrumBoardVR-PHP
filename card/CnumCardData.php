@@ -1,30 +1,25 @@
-
 <?php
-
 	include "connect.php"; 	
 	
     $link=Connection();
 	
-	$SSnname = $_POST["SSnnamePost"]; //員工編號;
+	$Cnum = $_POST["CnumPost"]; 
 	
-	$sql ="SELECT Pnumber,PSsn,PCharacter FROM projectemployee WHERE PSsn='".$SSnname."' AND PCharacter='ScrumMaster'";
-	
+	$sql ="SELECT Cnum,	Ctitle,Ctext,xLocation,yLocation,Pnum,CSsn,ASsn,Estimate,Etime,Alpha,Red,Green,Blue FROM card WHERE Cnum = '".$Cnum."';";
 	$result =mysqli_query($link,"SET NAMES utf8");
-	$result = mysqli_query($link ,$sql);
+	$result =mysqli_query($link,$sql);
 	$i=0;
 	$ary[]=array();
 	if(mysqli_num_rows($result)>0){
 	
 		while($row=mysqli_fetch_assoc($result)){
-						
-					$ary[$i]=$row;				
+				$ary[$i]=$row;				
 					
 					$i++;		
 		}	
-		echo json_encode($ary, JSON_UNESCAPED_UNICODE);	
+		echo json_encode($ary, JSON_UNESCAPED_UNICODE);
 	}
 	else if(mysqli_num_rows($result)==0){	
 	    echo "NULL";
 	}
-	
 ?>

@@ -9,14 +9,6 @@
 	$Super_SSn = $_POST["SuperSSnPost"];//主管編號
 	//	$sql ="SELECT Fname ,Lname,SSn,password,Supe_ssn,Teamno FROM employee";
 	
-	if(!get_magic_quotes_gpc()){
-		$Pname =addslashes($Pname);
-		$Pnum=addslashes($Pnum);
-		$Super_SSn=addslashes($Super_SSn);
-		
-	}
-	
-	
 	//$result =mysqli_query($conn,"SET NAMES utf8");
 	$sql = "INSERT INTO project (Pname ,Pnum,Super_SSn)
 			VALUES ('".$Pname."','".$Pnum."','".$Super_SSn."')";
